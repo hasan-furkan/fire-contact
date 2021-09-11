@@ -1,17 +1,14 @@
 import firebase from "firebase/app";
-import "firebase/database"
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCkysppAuYivWwpn1vemRLStoXlH6SWhz0",
-    authDomain: "fire-contact-in-class.firebaseapp.com",
-    projectId: "fire-contact-in-class",
-    storageBucket: "fire-contact-in-class.appspot.com",
-    messagingSenderId: "937118060854",
-    appId: "1:937118060854:web:cdfe78b2e7570304eda397"
+import "firebase/database";
+const devConfig = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
 };
-
-firebase.initializeApp(firebaseConfig)
-
-
+const prodConfig = {};
+const firebaseConfig = process.env.NODE_ENV === "development" ? devConfig : prodConfig;
+firebase.initializeApp(firebaseConfig);
 export default firebase;
