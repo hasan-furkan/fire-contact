@@ -26,7 +26,7 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
         <div className="ui pilled segment">
           <div className="ui pilled brand">
             <a
-              href="https://github.com/oguzhancvdr"
+              href="#"
               className="design"
               target="_blank"
               rel="noopener noreferrer"
